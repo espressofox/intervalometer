@@ -42,13 +42,21 @@
     <div class="big" id="d-result">—</div>
     <div class="sub" id="d-detail"></div>
   </div>
-  <button class="reset" data-reset="duration">Reset this calculator</button></section>
-<section class="panel" id="interval" role="tabpanel" aria-labelledby="tab-interval"><div class="card"><h2>Time spent shooting</h2><div class="fields two"><div class="field"><label for="i-h">Hours</label>
+  <button class="reset" data-reset="duration">Reset this calculator</button>
+</section>
+<section class="panel" id="interval" role="tabpanel" aria-labelledby="tab-interval"><div class="card">
+  <h2>Time spent shooting</h2>
+  <div class="fields two"><div class="field"><label for="i-h">Hours</label>
   <input id="i-h" type="number" inputmode="decimal" min="0" step="any" value="0"></div>
-  <div class="field"><label for="i-m">Minutes</label><input id="i-m" type="number" inputmode="decimal" min="0" step="any" value="30"></div>
+  <div class="field">
+    <label for="i-m">Minutes</label>
+    <input id="i-m" type="number" inputmode="decimal" min="0" step="any" value="30"></div>
 </div>
 </div>
-  <div class="card"><h2>Desired video</h2><div class="fields two"><div class="field"><label for="i-length">Length (seconds)</label>
+  <div class="card"><h2>Desired video</h2>
+    <div class="fields two">
+      <div class="field">
+        <label for="i-length">Length (seconds)</label>
     <input id="i-length" type="number" inputmode="decimal" min="0" step="any" value="9"></div>
     <div class="field"><label for="i-fps">Playback FPS</label>
     <input id="i-fps" type="number" inputmode="decimal" min="0" step="any" value="30"></div>
@@ -56,18 +64,21 @@
   </div><div class="result" aria-live="polite"><small>IDEAL SHOOTING INTERVAL</small><div class="big" id="i-result">—</div>
     <div class="sub" id="i-detail"></div>
   </div><div class="card"><h2>Whole-second options</h2>
-      <div class="options"><div class="option"><strong id="i-low">—</strong><span id="i-low-detail">—</span></div>
+      <div class="options"><div class="option"><strong id="i-low">—</strong>
+        <span id="i-low-detail">—</span>
+      </div>
         <div class="option"><strong id="i-high">—</strong>
     <span id="i-high-detail">—</span>
         </div>
       </div>
       <p class="muted" style="margin:12px 0 0">Estimated lengths assume continuous shooting and ignore camera startup, missed frames, and exposure limits.</p></div>
-  <button class="reset" data-reset="interval">Reset this calculator</button></section>
+  <button class="reset" data-reset="interval">Reset this calculator</button>
+</section>
     <div class="foot">Calculations run on your device. No data is sent anywhere.</div>
   </main>
     <script>
 (()=>{'use strict';
-      const defaults={'d-ih':0,'d-im':0,'d-is':7,'d-h':0,'d-m':30,'d-fps':30,'i-h':0,'i-m':30,'i-length':9,'i-fps':30};
+      const defaults={'d-ih':0,'d-im':1,'d-is':0,'d-h':1,'d-m':0,'d-fps':30,'i-h':1,'i-m':0,'i-length':10,'i-fps':30};
       const $=id=>document.getElementById(id);
       const fmt=n=>Number(n.toFixed(1)).toLocaleString(undefined,{maximumFractionDigits:1});
       const secondsText=s=>{
